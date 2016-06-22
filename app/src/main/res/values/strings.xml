@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AdroidChat</string>
+
+    <string name="login.message.email">Correo</string>
+    <string name="login.message.password">Constraseñ</string>
+    <string name="login.button.signin">Iniciar session</string>
+    <string name="login.button.signup">Crear cuenta</string>
+</resources>

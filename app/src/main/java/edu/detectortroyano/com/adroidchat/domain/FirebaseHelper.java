@@ -1,4 +1,4 @@
-package edu.detectortroyano.com.adroidchat;
+package edu.detectortroyano.com.adroidchat.domain;
 
 import com.firebase.client.AuthData;
 import com.firebase.client.DataSnapshot;
@@ -8,7 +8,6 @@ import com.firebase.client.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * Created by detectortroyano on 24/06/2016.

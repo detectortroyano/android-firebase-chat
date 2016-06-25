@@ -1,4 +1,4 @@
-package edu.detectortroyano.com.adroidchat;
+package edu.detectortroyano.com.adroidchat.login;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.widget.EditText;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.detectortroyano.com.adroidchat.R;
 
 public class LoginActivity extends AppCompatActivity {
 

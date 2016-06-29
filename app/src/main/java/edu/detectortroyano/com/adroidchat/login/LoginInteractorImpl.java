@@ -1,5 +1,7 @@
 package edu.detectortroyano.com.adroidchat.login;
 
+import android.util.Log;
+
 /**
  * Created by detectortroyano on 27/06/2016.
  */
@@ -12,6 +14,7 @@ public class LoginInteractorImpl implements LoginInteractor {
 
     @Override
     public void checkSession() {
+        Log.e("LoginInteractorImpl","checkSession");
         loginRepository.checkSession();
     }
 

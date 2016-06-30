@@ -76,7 +76,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @Override
     public void handleSignIn(){
         //Log.e("Click",editTxtEmail.getText().toString());
-        loginPresenter.registerNewUser(editTxtEmail.getText().toString()
+        loginPresenter.valideLogin(editTxtEmail.getText().toString()
                 , editTxtPassword.getText().toString());
     }
 
@@ -84,7 +84,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @Override
     public void handleSignUp(){
         //Log.e("Click",editTxtPassword.getText().toString());
-        loginPresenter.valideLogin(editTxtEmail.getText().toString()
+        loginPresenter.registerNewUser(editTxtEmail.getText().toString()
                 , editTxtPassword.getText().toString());
     }
 
@@ -94,9 +94,9 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     }
 
     @Override
-    public void loginError(String Error) {
+    public void loginError(String error) {
         editTxtPassword.setText("");
-        String msgError = String.format(getString(R.string.login_error_message_signin));
+        String msgError = String.format(getString(R.string.login_error_message_signin), error);
         editTxtPassword.setError(msgError);
     }
 

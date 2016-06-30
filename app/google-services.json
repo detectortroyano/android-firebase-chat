@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "617364736372",
+    "firebase_url": "https://android-chat-ad73c.firebaseio.com",
+    "project_id": "android-chat-ad73c",
+    "storage_bucket": "android-chat-ad73c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:617364736372:android:6900aec43b026d7c",
+        "android_client_info": {
+          "package_name": "edu.detectortroyano.com.adroidchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "617364736372-1dd1l9mjhi143p9dki61ad8c8ocmdt5g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABMVB70acNgEBFdf7k1TgTPWX3rlD9BA8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

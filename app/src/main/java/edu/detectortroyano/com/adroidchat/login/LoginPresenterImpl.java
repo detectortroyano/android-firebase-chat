@@ -1,6 +1,7 @@
 package edu.detectortroyano.com.adroidchat.login;
 
 import android.util.Log;
+import org.greenrobot.eventbus.Subscribe;
 
 import edu.detectortroyano.com.adroidchat.lib.EventBus;
 import edu.detectortroyano.com.adroidchat.lib.GreenRobotEventBus;
@@ -96,6 +97,7 @@ public class LoginPresenterImpl implements LoginPresenter{
     }
 
     @Override
+    @Subscribe
     public void onEventMainThread(LoginEvent loginEvent) {
         switch (loginEvent.getEventType()){
             case LoginEvent.onSignInSuccess:
@@ -110,7 +112,7 @@ public class LoginPresenterImpl implements LoginPresenter{
             case LoginEvent.onSignUpError:
                 onSignUpError(loginEvent.getErrorMessage());
                 break;
-            case LoginEvent.onFileToRecovereSession:
+            case LoginEvent.onFileToRecoverSession:
                 onFileToRecoreSession();
                 break;
         }

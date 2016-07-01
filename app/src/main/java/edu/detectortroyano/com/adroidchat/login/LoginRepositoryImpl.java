@@ -82,7 +82,7 @@ public class LoginRepositoryImpl implements LoginRepository {
             postEvent(LoginEvent.onSignInError, e.getMessage());
         }
     }
-
+    //Check session
     @Override
     public void checkSession() {
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {

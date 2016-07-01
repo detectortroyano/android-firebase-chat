@@ -1,4 +1,4 @@
-package edu.detectortroyano.com.adroidchat.login;
+package edu.detectortroyano.com.adroidchat.login.ui;
 
 import android.content.Intent;
 import android.support.design.widget.Snackbar;
@@ -16,8 +16,11 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.detectortroyano.com.adroidchat.R;
 import edu.detectortroyano.com.adroidchat.contactlist.ContactListActivity;
+import edu.detectortroyano.com.adroidchat.login.LoginPresenter;
+import edu.detectortroyano.com.adroidchat.login.LoginPresenterImpl;
+import edu.detectortroyano.com.adroidchat.login.LoginView;
 
-public class LoginActivity extends AppCompatActivity implements LoginView{
+public class LoginActivity extends AppCompatActivity implements LoginView {
 
     @Bind(R.id.editTxtEmail)
     EditText editTxtEmail;

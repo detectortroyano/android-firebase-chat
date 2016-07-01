@@ -7,5 +7,5 @@
     <string name="login.button.signup">Crear cuenta</string>
     <string name="login.error.message.signin">No es posible iniciar session %1$s</string>
     <string name="login.error.message.signup">No es posible registrar nuevo usuario %1$s</string>
-    <string name="login.notice.message.signup">Usuario agregado exitosamente %1$s</string>
+    <string name="login.notice.message.signup">Usuario agregado exitosamente</string>
 </resources>

@@ -1,4 +1,4 @@
-package edu.detectortroyano.com.adroidchat.login;
+package edu.detectortroyano.com.adroidchat.login.ui;
 
 /**
  * Created by detectortroyano on 25/06/2016.

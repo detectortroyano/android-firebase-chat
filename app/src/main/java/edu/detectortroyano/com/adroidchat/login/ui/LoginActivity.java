@@ -18,7 +18,6 @@ import edu.detectortroyano.com.adroidchat.R;
 import edu.detectortroyano.com.adroidchat.contactlist.ContactListActivity;
 import edu.detectortroyano.com.adroidchat.login.LoginPresenter;
 import edu.detectortroyano.com.adroidchat.login.LoginPresenterImpl;
-import edu.detectortroyano.com.adroidchat.login.LoginView;
 
 public class LoginActivity extends AppCompatActivity implements LoginView {
 

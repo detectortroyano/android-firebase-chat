@@ -6,6 +6,7 @@ import org.greenrobot.eventbus.Subscribe;
 import edu.detectortroyano.com.adroidchat.lib.EventBus;
 import edu.detectortroyano.com.adroidchat.lib.GreenRobotEventBus;
 import edu.detectortroyano.com.adroidchat.login.events.LoginEvent;
+import edu.detectortroyano.com.adroidchat.login.ui.LoginView;
 
 /**
  * Created by detectortroyano on 26/06/2016.

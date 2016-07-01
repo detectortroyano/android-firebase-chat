@@ -98,7 +98,7 @@ public class LoginPresenterImpl implements LoginPresenter{
     }
 
     @Override
-    @Subscribe
+    @Subscribe //Refactor gradle y eventbus
     public void onEventMainThread(LoginEvent loginEvent) {
         switch (loginEvent.getEventType()){
             case LoginEvent.onSignInSuccess:

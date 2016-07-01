@@ -23,7 +23,7 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-
+//Refactor gradle y eventbus
 ext {
     minSdkVersion = 16
     targetSdkVersion = 23

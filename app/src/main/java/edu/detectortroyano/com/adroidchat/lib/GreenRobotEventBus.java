@@ -4,6 +4,7 @@ package edu.detectortroyano.com.adroidchat.lib;
  * Created by detectortroyano on 27/06/2016.
  */
 public class GreenRobotEventBus implements EventBus {
+    //Refactor gradle y eventbus
     org.greenrobot.eventbus.EventBus eventBus;
 
     private static class SingletonHolder {
@@ -13,7 +14,7 @@ public class GreenRobotEventBus implements EventBus {
     public static GreenRobotEventBus getInstance() {
         return SingletonHolder.INSTANCE;
     }
-
+    //Refactor gradle y eventbus
     public GreenRobotEventBus(){
         eventBus = org.greenrobot.eventbus.EventBus.getDefault();
     }

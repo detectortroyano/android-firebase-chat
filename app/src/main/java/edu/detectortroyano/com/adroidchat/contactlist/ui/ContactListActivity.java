@@ -1,4 +1,4 @@
-package edu.detectortroyano.com.adroidchat.contactlist;
+package edu.detectortroyano.com.adroidchat.contactlist.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

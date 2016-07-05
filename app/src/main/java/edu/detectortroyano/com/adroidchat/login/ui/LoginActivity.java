@@ -15,7 +15,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.detectortroyano.com.adroidchat.R;
-import edu.detectortroyano.com.adroidchat.contactlist.ContactListActivity;
+import edu.detectortroyano.com.adroidchat.contactlist.ui.ContactListActivity;
 import edu.detectortroyano.com.adroidchat.login.LoginPresenter;
 import edu.detectortroyano.com.adroidchat.login.LoginPresenterImpl;
 

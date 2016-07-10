@@ -18,6 +18,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.detectortroyano.com.adroidchat.R;
+import edu.detectortroyano.com.adroidchat.addcontact.ui.AddContactFragment;
 import edu.detectortroyano.com.adroidchat.contactlist.ContactListPresenter;
 import edu.detectortroyano.com.adroidchat.contactlist.ContactListPresenterImpl;
 import edu.detectortroyano.com.adroidchat.contactlist.ui.adapters.ContactListAdapter;
@@ -106,7 +107,7 @@ public class ContactListActivity extends AppCompatActivity
 
     @OnClick(R.id.fab)
     public void addContact(){
-
+        new AddContactFragment().show(getSupportFragmentManager(), getString(R.string.addcontact_message_title));
     }
 
     @Override

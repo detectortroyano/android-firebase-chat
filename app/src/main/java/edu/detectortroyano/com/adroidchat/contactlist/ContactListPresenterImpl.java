@@ -27,7 +27,7 @@ public class ContactListPresenterImpl implements ContactListPresenter {
     @Override
     public void onPause() {
         contactListSessionInteractor.changeConectionStatus(User.OFFLINE);
-        contactListInteractor.onSubscribe();
+        contactListInteractor.unsubscribe();
     }
 
     @Override

@@ -5,7 +5,7 @@ package edu.detectortroyano.com.adroidchat.contactlist;
  */
 public interface ContactListInteractor {
     void subscribe();
-    void onSubscribe();
+    void unsubscribe();
     void destroyListener();
     void removeContact(String email);
 }

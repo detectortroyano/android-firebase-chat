@@ -1,4 +1,4 @@
-package edu.detectortroyano.com.adroidchat.contactlist.ui.adapters;
+package edu.detectortroyano.com.adroidchat.lib;
 
 import android.widget.ImageView;
 

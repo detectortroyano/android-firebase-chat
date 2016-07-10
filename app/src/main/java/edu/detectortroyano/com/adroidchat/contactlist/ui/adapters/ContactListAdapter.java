@@ -13,7 +13,9 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
 import edu.detectortroyano.com.adroidchat.R;
+import edu.detectortroyano.com.adroidchat.domain.AvatarHelper;
 import edu.detectortroyano.com.adroidchat.entities.User;
+import edu.detectortroyano.com.adroidchat.lib.ImageLoader;
 
 /**
  * Created by detectortroyano on 05/07/2016.
@@ -43,14 +45,14 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
 
         String email = user.getEmail();
         boolean online = user.isOnline();
-        String status = online ? "online" : "off";
+        String status = online ? "online" : "offline";
         int color = online ? Color.GREEN : Color.RED;
 
         holder.txtUser.setText(email);
         holder.txtStatus.setText(status);
         holder.txtStatus.setTextColor(color);
 
-        imageLoader.load(holder.imgAvatar, "");
+        imageLoader.load(holder.imgAvatar, AvatarHelper.getAvatarURL(email));
     }
 
     @Override
@@ -69,7 +71,7 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-            this.view = view;
+            this.view = itemView;
         }
 
         private void setClickListener(final User user, final OnItemClickListener onItemClickListener){

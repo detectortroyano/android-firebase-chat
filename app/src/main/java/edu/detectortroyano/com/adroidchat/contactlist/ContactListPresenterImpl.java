@@ -51,7 +51,7 @@ public class ContactListPresenterImpl implements ContactListPresenter {
     @Override
     public void signOff() {
         contactListSessionInteractor.changeConectionStatus(User.OFFLINE);
-        contactListInteractor.subscribe();
+        contactListInteractor.unsubscribe();
         contactListInteractor.destroyListener();
         contactListSessionInteractor.sessionOff();
     }
@@ -66,7 +66,7 @@ public class ContactListPresenterImpl implements ContactListPresenter {
         contactListInteractor.removeContact(email);
     }
 
-        @Override
+    @Override
     @Subscribe
     public void onEventMainThread(ContactListEvent event) {
         User user = event.getUser();

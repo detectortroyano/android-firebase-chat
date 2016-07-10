@@ -4,7 +4,7 @@ package edu.detectortroyano.com.adroidchat.contactlist;
  * Created by detectortroyano on 09/07/2016.
  */
 public class ContactListInteractorImpl implements ContactListInteractor {
-    ContactListRepository contactListRepository;
+    ContactListRepositoryImpl contactListRepository;
 
     public ContactListInteractorImpl() {
         this.contactListRepository = new ContactListRepositoryImpl();

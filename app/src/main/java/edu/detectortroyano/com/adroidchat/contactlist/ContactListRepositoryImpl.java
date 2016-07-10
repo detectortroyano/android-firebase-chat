@@ -4,9 +4,9 @@ import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 
+import edu.detectortroyano.com.adroidchat.entities.User;
 import edu.detectortroyano.com.adroidchat.contactlist.event.ContactListEvent;
 import edu.detectortroyano.com.adroidchat.domain.FirebaseHelper;
-import edu.detectortroyano.com.adroidchat.entities.User;
 import edu.detectortroyano.com.adroidchat.lib.EventBus;
 import edu.detectortroyano.com.adroidchat.lib.GreenRobotEventBus;
 
@@ -20,28 +20,6 @@ public class ContactListRepositoryImpl implements ContactListRepository {
 
     public ContactListRepositoryImpl(){
         firebaseHelper = FirebaseHelper.getInstance();
-    }
-
-    @Override
-    public void signOff() {
-        firebaseHelper.signOff();
-    }
-
-    @Override
-    public String getCurrentUserEmail() {
-        return firebaseHelper.getAuthUserEmail();
-    }
-
-    @Override
-    public void removeContact(String email) {
-        String currentUserEmail = firebaseHelper.getAuthUserEmail();
-        firebaseHelper.getOneContactReference(currentUserEmail, email).removeValue();
-        firebaseHelper.getOneContactReference(email, currentUserEmail).removeValue();
-    }
-
-    @Override
-    public void destroyListener() {
-        contactListEventListener = null;
     }
 
     @Override
@@ -84,10 +62,33 @@ public class ContactListRepositoryImpl implements ContactListRepository {
     }
 
     @Override
+    public void destroyListener() {
+        contactListEventListener = null;
+    }
+
+    @Override
     public void unsuscribeToContactListEvent() {
         if (contactListEventListener != null) {
             firebaseHelper.getMyContactsReference().removeEventListener(contactListEventListener);
         }
+    }
+
+    @Override
+    public void removeContact(String email) {
+        String currentUserEmail = firebaseHelper.getAuthUserEmail();
+        firebaseHelper.getOneContactReference(currentUserEmail, email).removeValue();
+        firebaseHelper.getOneContactReference(email, currentUserEmail).removeValue();
+    }
+
+    @Override
+    public String getCurrentUserEmail() {
+        return firebaseHelper.getAuthUserEmail();
+    }
+
+
+    @Override
+    public void signOff() {
+        firebaseHelper.signOff();
     }
 
     @Override

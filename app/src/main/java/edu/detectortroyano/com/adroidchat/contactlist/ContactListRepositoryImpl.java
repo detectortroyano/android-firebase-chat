@@ -50,29 +50,17 @@ public class ContactListRepositoryImpl implements ContactListRepository {
             contactListEventListener = new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String previousChildKey) {
-                    String email = dataSnapshot.getKey();
-                    email = email.replace("_",".");
-                    boolean online = ((Boolean)dataSnapshot.getValue()).booleanValue();
-                    User user = new User(email, online, null);
-                    postEvent(ContactListEvent.onContactAdded, user);
+                    handleContact(dataSnapshot, ContactListEvent.onContactAdded);
                 }
 
                 @Override
                 public void onChildChanged(DataSnapshot dataSnapshot, String previousChildKey) {
-                    String email = dataSnapshot.getKey();
-                    email = email.replace("_",".");
-                    boolean online = ((Boolean)dataSnapshot.getValue()).booleanValue();
-                    User user = new User(email, online, null);
-                    postEvent(ContactListEvent.onContactChanged, user);
+                    handleContact(dataSnapshot, ContactListEvent.onContactChanged);
                 }
 
                 @Override
                 public void onChildRemoved(DataSnapshot dataSnapshot) {
-                    String email = dataSnapshot.getKey();
-                    email = email.replace("_",".");
-                    boolean online = ((Boolean)dataSnapshot.getValue()).booleanValue();
-                    User user = new User(email, online, null);
-                    postEvent(ContactListEvent.onContactRemoved, user);
+                    handleContact(dataSnapshot, ContactListEvent.onContactRemoved);
                 }
 
                 @Override
@@ -85,6 +73,14 @@ public class ContactListRepositoryImpl implements ContactListRepository {
         }
 
         firebaseHelper.getMyContactsReference().addChildEventListener(contactListEventListener);
+    }
+
+    private void handleContact(DataSnapshot dataSnapshot, int type){
+        String email = dataSnapshot.getKey();
+        email = email.replace("_",".");
+        boolean online = ((Boolean)dataSnapshot.getValue()).booleanValue();
+        User user = new User(email, online, null);
+        postEvent(type, user);
     }
 
     @Override

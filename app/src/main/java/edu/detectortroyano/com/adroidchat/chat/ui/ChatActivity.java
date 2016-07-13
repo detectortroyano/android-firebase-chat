@@ -1,4 +1,4 @@
-package edu.detectortroyano.com.adroidchat.chat;
+package edu.detectortroyano.com.adroidchat.chat.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

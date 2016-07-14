@@ -19,6 +19,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.detectortroyano.com.adroidchat.R;
 import edu.detectortroyano.com.adroidchat.addcontact.ui.AddContactFragment;
+import edu.detectortroyano.com.adroidchat.chat.ui.ChatActivity;
 import edu.detectortroyano.com.adroidchat.contactlist.ContactListPresenter;
 import edu.detectortroyano.com.adroidchat.contactlist.ContactListPresenterImpl;
 import edu.detectortroyano.com.adroidchat.contactlist.ui.adapters.ContactListAdapter;
@@ -127,7 +128,11 @@ public class ContactListActivity extends AppCompatActivity
 
     @Override
     public void onItemClick(User user) {
-        Toast.makeText(this, user.getEmail(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, user.getEmail(), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, ChatActivity.class);
+        intent.putExtra(ChatActivity.EMAIL_KEY, user.getEmail());
+        intent.putExtra(ChatActivity.ONLINE_KEY, user.isOnline());
+        startActivity(intent);
     }
 
     @Override

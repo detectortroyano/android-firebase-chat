@@ -33,17 +33,44 @@ public class ChatAdapter extends RecyclerView.Adapter <ChatAdapter.ViewHolder>{
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.content_chat, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+        ChatMessage chatMessage = chatMessages.get(position);
 
+        String msg = chatMessage.getMsg();
+        holder.txtMessage.setText(msg);
+
+        int color = fetchColor(R.attr.colorPrimary);
+        int gravity = Gravity.LEFT;
+
+        if (!chatMessage.isSentByMe()) {
+            gravity = Gravity.RIGHT;
+            color = fetchColor(R.attr.colorAccent);
+        }
+
+        holder.txtMessage.setBackgroundColor(color);
+        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)holder.txtMessage.getLayoutParams();
+        params.gravity = gravity;
+        holder.txtMessage.setLayoutParams(params);
     }
+
+    private int fetchColor(int color) {
+        TypedValue typedValue = new TypedValue();
+        TypedArray a = context.obtainStyledAttributes(typedValue.data,
+                new int[] { color });
+        int returnColor = a.getColor(0, 0);
+        a.recycle();
+        return returnColor;
+    }
+
 
     @Override
     public int getItemCount() {
-        return 0;
+        return chatMessages.size();
     }
 
     private boolean alreadyInAdapter(ChatMessage newMsg){
@@ -60,7 +87,7 @@ public class ChatAdapter extends RecyclerView.Adapter <ChatAdapter.ViewHolder>{
     }
 
     public void add(ChatMessage message) {
-        if (!alreadyInAdapter(message)) {
+        if (!chatMessages.contains(message)) {
             this.chatMessages.add(message);
             this.notifyDataSetChanged();
         }

@@ -2,9 +2,12 @@ package edu.detectortroyano.com.adroidchat.chat.entities;
 
 import com.google.firebase.database.Exclude;
 
+import edu.detectortroyano.com.adroidchat.entities.User;
+
 /**
  * Created by detectortroyano on 12/07/2016.
  */
+//@JsonIgnoreProperties("sentByMe")
 public class ChatMessage {
     String msg;
     String sender;
@@ -40,5 +43,14 @@ public class ChatMessage {
 
     public void setSentByMe(boolean sentByMe) {
         this.sentByMe = sentByMe;
+    }
+
+    public boolean equals(Object object){
+        boolean equal = false;
+        if (object instanceof ChatMessage){
+            ChatMessage msg = (ChatMessage) object;
+            equal = this.msg.equals(msg.getMsg()) && this.sender.equals(msg.getSender()) && this.sentByMe == msg.sentByMe;
+        }
+        return equal;
     }
 }

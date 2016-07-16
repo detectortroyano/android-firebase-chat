@@ -7,11 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -100,7 +102,14 @@ public class ChatActivity extends AppCompatActivity implements ChatView{
     }
 
     private void setupAdapter() {
-        chatAdapter = new ChatAdapter(this, new ArrayList<ChatMessage>());
+        ChatMessage msg1 = new ChatMessage();
+        ChatMessage msg2 = new ChatMessage();
+        msg1.setMsg("Hola");
+        msg2.setMsg("Como estas");
+        msg1.setSentByMe(true);
+        msg2.setSentByMe(false);
+        chatAdapter = new ChatAdapter(this, new ArrayList<ChatMessage>());//Arrays.asList(new ChatMessage[]{msg1, msg2}));//
+        Log.e("Click","setupAdapter()");
     }
 
     private void setupRecyclerView() {

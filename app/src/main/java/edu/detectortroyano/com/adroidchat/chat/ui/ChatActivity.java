@@ -17,6 +17,7 @@ import java.util.Arrays;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 import edu.detectortroyano.com.adroidchat.AndroidChatAplication;
 import edu.detectortroyano.com.adroidchat.R;
@@ -118,8 +119,10 @@ public class ChatActivity extends AppCompatActivity implements ChatView{
     }
 
     @Override
+    @OnClick(R.id.btnSendMessage)
     public void sendMessage() {
-
+        chatPresenter.sendMessage(editTxtMessage.getText().toString());
+        editTxtMessage.setText("");
     }
 
     @Override
